@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TwInIoL Photography - Photographe Professionnel spécialisé en photographie de mariage, portrait et événement">
+    <title>TwInIoL Photography - Photographe Professionnel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./font-awesome/css/all.min.css">
+    <style>
+        :root {
+            --dark-navy: #0f1419;
+            --charcoal: #1a1f2e;
+            --slate: #2c3e50;
+            --gold: #d4af37;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* ===================== HEADER ===================== */
+        .header {
+            background: var(--dark-navy);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .logo-highlight {
+            color: var(--gold);
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-list a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color var(--transition);
+            position: relative;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-list a:hover {
+            color: var(--gold);
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width var(--transition);
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+            padding: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .hamburger:hover {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .hamburger.active {
+            color: var(--gold);
+        }
+
+        /* ===================== HERO SECTION ===================== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--charcoal) 100%);
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./images/a1-removebg-preview.png') right/50% no-repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero-text .highlight {
+            color: var(--gold);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 16px 45px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--dark-navy);
+        }
+
+        .btn-primary:hover {
+            background: #e5c158;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--dark-navy);
+        }
+
+        /* ===================== FEATURED WORKS SECTION ===================== */
+        .featured-works {
+            padding: 120px 20px;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 52px;
+            color: var(--dark-navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .featured-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .featured-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 450px;
+            cursor: pointer;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition);
+        }
+
+        .featured-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(15, 20, 25, 0.75), rgba(212, 175, 55, 0.6));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            color: var(--white);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .featured-item:hover .featured-overlay {
+            opacity: 1;
+        }
+
+        .featured-overlay h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .featured-overlay p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        /* ===================== ABOUT SECTION ===================== */
+        .about {
+            padding: 120px 20px;
+            background: var(--light-gray);
+        }
+
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+            color: var(--dark-navy);
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 2;
+            margin-bottom: 25px;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .highlight-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .highlight-item i {
+            font-size: 32px;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+
+        .highlight-item h4 {
+            font-size: 18px;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .highlight-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ===================== GALLERY SECTION ===================== */
+        .gallery-section {
+            padding: 120px 20px;
+            background: var(--white);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 70px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 12px 28px;
+            background: var(--white);
+            border: 2px solid var(--charcoal);
+            color: var(--charcoal);
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all var(--transition);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gold);
+            color: var(--dark-navy);
+            border-color: var(--gold);
+        }
+
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 1;
+            cursor: pointer;
+            transition: transform var(--transition);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 20, 25, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .overlay-content i {
+            font-size: 45px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .overlay-content p {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ===================== SERVICES SECTION ===================== */
+        .services {
+            padding: 120px 20px;
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition);
+            border-top: 4px solid var(--gold);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: var(--dark-navy);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .service-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .service-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* ===================== STATS SECTION ===================== */
+        .stats {
+            padding: 100px 20px;
+            background: var(--dark-navy);
+            color: var(--white);
+        }
+
+        .stats-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .stat-item p {
+            font-size: 16px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===================== TESTIMONIALS SECTION ===================== */
+        .testimonials {
+            padding: 120px 20px;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        .testimonial-author {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===================== CTA SECTION ===================== */
+        .cta-section {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--charcoal) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 48px;
+            color: var(--white);
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 45px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-size: 26px;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: transform var(--transition);
+        }
+
+        .social-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .social-icon {
+            font-size: 36px;
+            color: var(--gold);
+            transition: color var(--transition);
+        }
+
+        .social-item:hover .social-icon {
+            color: var(--white);
+        }
+
+        .social-label {
+            font-size: 12px;
+            opacity: 0.85;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13px;
+            opacity: 0.75;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 1024px) {
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-list {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, var(--dark-navy) 0%, var(--charcoal) 100%);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                text-align: center;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+                z-index: 999;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-list a {
+                display: block;
+                padding: 18px 20px;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+                font-size: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .nav-list a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-list a:hover {
+                background: rgba(212, 175, 55, 0.1);
+                padding-left: 30px;
+            }
+
+            .nav-list.active {
+                max-height: 500px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+            }
+
+            .featured-grid,
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-item {
+                height: 300px;
+            }
+
+            .about-highlights,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px;
+            }
+
+            .nav-list {
+                gap: 10px;
+            }
+
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .hero-text p {
+                font-size: 14px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .btn {
+                padding: 12px 30px;
+                font-size: 12px;
+            }
+
+            .cta-content h2 {
+                font-size: 32px;
+            }
+
+            .featured-item {
+                height: 250px;
+            }
+
+            .social-links {
+                gap: 20px;
+            }
+
+            .social-icon {
+                font-size: 28px;
+            }
+
+            .stats-grid {
+                gap: 30px;
+            }
+
+            .stat-item h3 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <span class="logo-highlight">TwInIoL</span> Photograph
+            </h1>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-subtitle">Photographie Professionnelle</div>
+            <h1>Capturez vos <span class="highlight">moments précieux</span> avec élégance</h1>
+            <p>Spécialisé dans la photographie de mariage, portrait et événement. Chaque clic raconte une histoire unique avec une touche artistique et professionnelle. Plus de 10 années d'expérience au service de vos souvenirs.</p>
+            <div class="cta-buttons">
+                <a href="#gallery" class="btn btn-primary">Découvrir mes travaux</a>
+                <a href="#contact" class="btn btn-secondary">Prendre rendez-vous</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED WORKS SECTION -->
+    <section class="featured-works">
+        <div class="section-header">
+            <h2>Travaux en vedette</h2>
+            <p>Sélection des créations photographiques les plus exceptionnelles, représentant mon expertise et ma vision artistique</p>
+        </div>
+        <div class="featured-grid">
+            <div class="featured-item">
+                <img src="./images/a8.jpg" alt="Mariage - Cérémonie d'exception">
+                <div class="featured-overlay">
+                    <h3>Photographie de Mariage</h3>
+                    <p>Moments émotionnels et romantiques immortalisés avec sensibilité</p>
+                </div>
+            </div>
+            <div class="featured-item">
+                <img src="./images/a6.jpg" alt="Portrait - Authenticité et beauté">
+                <div class="featured-overlay">
+                    <h3>Portraits Studio</h3>
+                    <p>Mise en valeur de la personnalité et de l'authenticité de chaque sujet</p>
+                </div>
+            </div>
+            <div class="featured-item">
+                <img src="./images/a11.jpg" alt="Famille - Moments complices">
+                <div class="featured-overlay">
+                    <h3>Photographie Familiale</h3>
+                    <p>Liens familiaux et souvenirs précieux capturés dans leur naturel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>À propos de TwInIoL</h2>
+                <p>Je suis photographe professionnel avec une passion inébranlable pour la capture de moments authentiques et significatifs. Depuis plus d'une décennie, j'ai développé une expertise reconnue dans la photographie de mariage, de portrait et d'événement.</p>
+                <p>Mon approche combine une maîtrise technique avancée avec une sensibilité artistique particulière. Chaque projet est traité comme une collaboration unique où vos histoires se transforment en œuvres visuelles intemporelles. Je m'engage à dépasser les attentes et à livrer des images qui racontent vraiment votre histoire.</p>
+                <p>Mon style photographique se caractérise par des compositions réfléchies, une utilisation maestrale de la lumière, et une attention méticuleuse aux détails. Je crois que la vraie photographie transcende le simple instantané pour devenir un témoignage émotionnel durable.</p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-camera-retro"></i>
+                        <div>
+                            <h4>Équipement Professionnel</h4>
+                            <p>Matériel haute gamme et objectifs premium pour qualité exceptionnelle</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <h4>Vision Créative</h4>
+                            <p>Approche artistique unique et perspective innovante en photographie</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-image"></i>
+                        <div>
+                            <h4>Retouche Experte</h4>
+                            <p>Post-production soignée pour mettre en valeur chaque création</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-handshake"></i>
+                        <div>
+                            <h4>Service Clientèle</h4>
+                            <p>Écoute attentive, professionnalisme et disponibilité constante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="./images/a7-removebg-preview.png" alt="Portrait du photographe TwInIoL">
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-header">
+            <h2>Ma Galerie Complète</h2>
+            <p>Explorez une collection variée et complète de mes meilleurs travaux photographiques, chacun racontant une histoire unique</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Tous les Travaux</button>
+            <button class="filter-btn" data-filter="mariage">Mariages</button>
+            <button class="filter-btn" data-filter="portrait">Portraits</button>
+            <button class="filter-btn" data-filter="famille">Famille</button>
+            <button class="filter-btn" data-filter="nature">Paysages</button>
+            <button class="filter-btn" data-filter="evenement">Événements</button>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item" data-category="mariage">
+                <img src="./images/a8.jpg" alt="Mariage - Cérémonie romantique">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-heart"></i>
+                        <p>Mariage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="portrait">
+                <img src="./images/a6.jpg" alt="Portrait studio - Beauté et caractère">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-user"></i>
+                        <p>Portrait</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="famille">
+                <img src="./images/a11.jpg" alt="Famille - Moments précieux">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-users"></i>
+                        <p>Famille</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature">
+                <img src="./images/a189.jpg" alt="Paysage - Nature et lumière">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-tree"></i>
+                        <p>Paysage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mariage">
+                <img src="./images/a131.jpg" alt="Mariage - Détails d'exception">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-heart"></i>
+                        <p>Mariage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="portrait">
+                <img src="./images/a9.jpg" alt="Portrait - Élégance naturelle">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-user"></i>
+                        <p>Portrait</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="evenement">
+                <img src="./images/a5.jpg" alt="Événement - Ambiance captivante">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-video"></i>
+                        <p>Événement</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="famille">
+                <img src="./images/a4.jpg" alt="Famille - Complicité et sourires">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-users"></i>
+                        <p>Famille</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="nature">
+                <img src="./images/a17.jpg" alt="Paysage - Beauté sauvage">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-tree"></i>
+                        <p>Paysage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="portrait">
+                <img src="./images/a14.jpg" alt="Portrait - Âme captivante">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-user"></i>
+                        <p>Portrait</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="mariage">
+                <img src="./images/a12.jpg" alt="Mariage - Instant magique">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-heart"></i>
+                        <p>Mariage</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="evenement">
+                <img src="./images/a7.jpg" alt="Événement - Moments inoubliables">
+                <div class="gallery-overlay">
+                    <div class="overlay-content">
+                        <i class="fas fa-video"></i>
+                        <p>Événement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Mes Services</h2>
+            <p>Offres photographiques adaptées à vos besoins avec expertise professionnelle et passion</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-heart service-icon"></i>
+                <h3>Photographie de Mariage</h3>
+                <p>Documentation complète de votre jour J avec sensibilité et professionnalisme. Capture des moments émotionnels et des détails précieux qui feront vivre vos souvenirs à jamais.</p>
+                <ul class="service-features">
+                    <li>Couverture complète de la journée</li>
+                    <li>Séances pré-mariage</li>
+                    <li>Album photo premium</li>
+                    <li>Retouches professionnelles</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-user service-icon"></i>
+                <h3>Portraits Studio & Extérieur</h3>
+                <p>Séances photo mettant en avant votre authenticité et votre personnalité. Utilisation experte de la lumière pour des portraits captivants et intemporels qui reflètent votre essence.</p>
+                <ul class="service-features">
+                    <li>Séance personnalisée</li>
+                    <li>Plusieurs changements</li>
+                    <li>Sélection et retouches</li>
+                    <li>Galerie en ligne sécurisée</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-users service-icon"></i>
+                <h3>Photographie Familiale</h3>
+                <p>Création de souvenirs précieux en famille dans une ambiance détendue et naturelle. Capture des liens authentiques et des sourires sincères qui resteront gravés pour toujours.</p>
+                <ul class="service-features">
+                    <li>Séance en location</li>
+                    <li>Durée flexible</li>
+                    <li>Retouches incluses</li>
+                    <li>Tirage photo gratuit</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-video service-icon"></i>
+                <h3>Couverture d'Événements</h3>
+                <p>Documentation professionnelle complète de vos événements spéciaux. Capturer l'atmosphère, les émotions et les moments clés avec une approche discrète mais attentive.</p>
+                <ul class="service-features">
+                    <li>Couverture complète</li>
+                    <li>Plusieurs photographes</li>
+                    <li>Album numérique</li>
+                    <li>Vidéo highlight</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-leaf service-icon"></i>
+                <h3>Shooting en Extérieur</h3>
+                <p>Explorez les plus beaux cadres naturels pour des images époustouflantes. Photographie de paysage et de nature combinée avec portrait pour créer des compositions uniques et mémorables.</p>
+                <ul class="service-features">
+                    <li>Lieux de votre choix</li>
+                    <li>Durée flexible</li>
+                    <li>Photos en HD</li>
+                    <li>Retouches paysagères</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-image service-icon"></i>
+                <h3>Photographie Commerciale</h3>
+                <p>Mettez en valeur vos produits et services avec une photographie professionnelle de qualité. Solutions adaptées pour le commerce électronique, les catalogues et les besoins marketing.</p>
+                <ul class="service-features">
+                    <li>Sessions produits</li>
+                    <li>Fonds variés</li>
+                    <li>Retouches complètes</li>
+                    <li>Optimisation web</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Années d'Expérience</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Événements Couverts</p>
+            </div>
+            <div class="stat-item">
+                <h3>1000+</h3>
+                <p>Clients Satisfaits</p>
+            </div>
+            <div class="stat-item">
+                <h3>50K+</h3>
+                <p>Photos Premium</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2>Témoignages de Clients</h2>
+            <p>Découvrez les avis et retours de satisfaction de mes clients autour du monde</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">« TwInIoL a transformé notre mariage en une célébration photographique magnifique. Chaque image capture parfaitement l'émotion du jour. Professionnalisme et créativité au rendez-vous ! »</p>
+                <p class="testimonial-author">Sarah & Michel D.</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">« Les portraits studio de TwInIoL sont exceptionnels. Mise en valeur naturelle, ambiance professionnelle et résultats incroyables. Je recommande chaleureusement pour tous vos besoins photographiques. »</p>
+                <p class="testimonial-author">Jean Dupont</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">« Notre événement d'entreprise a bénéficié d'une couverture photographique exceptionnelle. Les images reflètent perfectly l'énergie et la dynamique de notre journée. Travail exemplaire ! »</p>
+                <p class="testimonial-author">Emma Rodriguez</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">« Les séances familiales sont devenues nos moments favoris. TwInIoL sait créer une atmosphère où tout le monde se sent à l'aise. Résultats magnifiques qui resteront intemporels. »</p>
+                <p class="testimonial-author">Famille Leblanc</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">« Photographe talentueux combinant technique maîtrisée et vision artistique unique. Chaque photo est une œuvre d'art. Service professionnel, respectueux et disponible. Excellent ! »</p>
+                <p class="testimonial-author">Pierre Martin</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">« Disponibilité remarquable, flexibilité appréciée et qualité constante. Les retouches sont impeccables et les délais respectés. TwInIoL dépasse les attentes à chaque projet. Hautement recommandé ! »</p>
+                <p class="testimonial-author">Caroline & Thomas P.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="contact" class="cta-section">
+        <div class="cta-content">
+            <h2>Prêt à créer vos souvenirs inoubliables ?</h2>
+            <p>Contactez-moi dès aujourd'hui pour discuter de votre projet photographique. Je serais ravi de transformer vos moments les plus précieux en magnifiques œuvres visuelles qui captureront l'essence de votre histoire.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Réserver une consultation</a>
+                <a href="#gallery" class="btn btn-secondary">Explorer la galerie</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Restons en Contact</h3>
+        <div class="social-links">
+            <div class="social-item">
+                <i class="fab fa-instagram social-icon"></i>
+                <span class="social-label">Instagram</span>
+            </div>
+            <div class="social-item">
+                <i class="fab fa-facebook social-icon"></i>
+                <span class="social-label">Facebook</span>
+            </div>
+            <div class="social-item">
+                <i class="fab fa-whatsapp social-icon"></i>
+                <span class="social-label">WhatsApp</span>
+            </div>
+            <div class="social-item">
+                <i class="fas fa-envelope social-icon"></i>
+                <span class="social-label">Email</span>
+            </div>
+            <div class="social-item">
+                <i class="fab fa-linkedin social-icon"></i>
+                <span class="social-label">LinkedIn</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TwInIoL Photography. Tous droits réservés. | Réalisé avec passion pour capturer vos histoires 📸</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('.nav-list');
+
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navList.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            // Update aria-expanded for accessibility
+            const isExpanded = navList.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close menu when clicking on a link
+        navList.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navList.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && navList.classList.contains('active')) {
+                navList.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Gallery filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => item.style.opacity = '1', 10);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => item.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
